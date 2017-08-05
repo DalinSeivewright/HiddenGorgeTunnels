@@ -24,7 +24,7 @@ local hideableNetworkVarsNetworkVars =
 function HideableMapBlip:OnCreate()
     MapBlip.OnCreate(self)
     self.hidden = false
-    self.alwaysVisibleToOwner = false
+    self.alwaysVisibleToOwner = true
 end
 
 if Client then
