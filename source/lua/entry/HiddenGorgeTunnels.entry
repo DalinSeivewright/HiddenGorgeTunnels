@@ -1,4 +1,3 @@
-Log("TESTING")
 modEntry = {
 	FileHooks = "lua/HiddenGorgeTunnels/hgt_Filehook.lua",
 	Priority = 35
