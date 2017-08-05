@@ -1,15 +1,15 @@
---[[
-    hgt_HideableMapBlip.lua
-
-    This class allows the MapBlip to be hidden for a given circumstance.
-    In this case, it will be used by TunnelEntrance entities.
-
-    By default, the HideableMapBlip is always seen by its owner but this can be toggled
-    with alwaysVisibleToOwner.
-
-    Currently, the MapBlips hidden status is overriden if the other team
-    has the owning object in sight i.e.  due to an Observation Scan.
---]]
+---------------------------------------
+-- hgt_HideableMapBlip.lua
+--
+-- This class allows the MapBlip to be hidden for a given circumstance.
+-- In this case, it will be used by TunnelEntrance entities.
+--
+-- By default, the HideableMapBlip is always seen by its owner but this can be toggled
+-- with alwaysVisibleToOwner.
+--
+-- Currently, the MapBlips hidden status is overriden if the other team
+-- has the owning object in sight i.e.  due to an Observation Scan.
+---------------------------------------
 class 'HideableMapBlip' (MapBlip)
 
 HideableMapBlip.kMapName = "HideableMapBlip"
