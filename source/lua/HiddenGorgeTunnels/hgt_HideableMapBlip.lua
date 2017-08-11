@@ -16,35 +16,34 @@ HideableMapBlip.kMapName = "HideableMapBlip"
 
 local hideableNetworkVarsNetworkVars =
 {
+    playerEntityId = "entityid",
     hidden = "boolean",  -- Determines if MapBlip is shown on Map
     alwaysVisibleToOwner = "boolean" -- Determines if MapBlip is shown to owner
                                      -- Even if hidden = true
+
 }
 
 function HideableMapBlip:OnCreate()
     MapBlip.OnCreate(self)
     self.hidden = false
     self.alwaysVisibleToOwner = true
-    self.localClient = nil
+    --self.localClient = nil
+    self.playerEntityId = Entity.invalidId
 end
 
 if Client then
     function HideableMapBlip:UpdateMinimapActivity(minimap, item)
-
-        local blipTeam = self:GetMapBlipTeam(minimap)
-        local blipColor = item.blipColor
-        -- For some reason self.clientIndex is not being setup correctly.
-        -- Not sure how PlayerMapBlip has its working (but perhaps it is not)
-        if not self.localClient then
-            self.localClient = Client.GetLocalPlayer():GetClientIndex()
-        end
-        local sameTeam = self.OnSameMinimapBlipTeam(minimap.playerTeam, blipTeam) or minimap.spectating
+        local blipTeamNumber = self:GetMapBlipTeam(minimap)
+        local sameTeam = blipTeamNumber == minimap.playerTeam or minimap.spectating
         -- If MapBlip is hidden and not sighted by Enemy.
-        if self.hidden or (not sameTeam and self:GetIsSighted()) then
-            -- If the client is the owner and we don't need to alwaysVisibleToOwner
-            -- display to the owner, hide the MapBlip
-            local owner = Shared.GetEntity(self:GetOwnerEntityId())
-            if self.localClient ~= minimap.clientIndex or not self.alwaysVisibleToOwner then
+        if self.hidden then
+            if  not sameTeam and self:GetIsSighted() then
+                return MapBlip.UpdateMinimapActivity(self, minimap, item)
+            end
+
+            if self.playerEntityId ~= Entity.invalidId and Client.GetLocalPlayer():GetId() == self.playerEntityId and self.alwaysVisibleToOwner then
+                return MapBlip.UpdateMinimapActivity(self, minimap, item)
+            else
                 return nil
             end
         end
