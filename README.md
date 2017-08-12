@@ -4,6 +4,6 @@ In certain games, particular rounds of Siege, unconnected Gorge tunnels tend to 
 
 To minimize this, this mod will hide all Minimap icons for unconnected tunnels allow for less of a polutted minimap.
 
-# Owners see their own tunnels regardless of state
-# Players on the same team as the owner of a tunnel will only see the Minimap Icons for the tunnel when it is connected.
-# Enemy players see the tunnels as per usual i.e.  Scans/Players looking at a tunnel will have the Icon show up for the enemy team.
+1. Owners see their own tunnels regardless of state
+2. Players on the same team as the owner of a tunnel will only see the Minimap Icons for the tunnel when it is connected.
+2. Enemy players see the tunnels as per usual i.e.  Scans/Players looking at a tunnel will have the Icon show up for the enemy team.
