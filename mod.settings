@@ -1,10 +1,10 @@
 name        = "HiddenGorgeTunnels"
 source_dir  = "source"
 output_dir  = "output"
-description = [=[HiddenGorgeTunnels.
-
-Will hide all unconnected Gorge Tunnels from the map overview of the Alien team to prevent Gorge Tunnel spam, normally seen at the start of Siege games, from trashing up the overview and making it difficult to see where the connected tunnels actually are.
-
+description = [=[HiddenGorgeTunnels.
+
+Will hide all unconnected Gorge Tunnels from the map overview of the Alien team to prevent Gorge Tunnel spam, normally seen at the start of Siege games, from trashing up the overview and making it difficult to see where the connected tunnels actually are.
+
 Testing phase.]=]
 image       = "preview.jpg"
 tag_modtype = "Tool"

@@ -36,7 +36,6 @@ if Server then
         -- There is a performance penalty with this so we only do it if
         -- the Connected status has changed.
         if self:GetIsConnected() ~= self.mapBlipActive then
-            Shared.Message("Changing Tunnel State!")
             self.mapBlipActive = self:GetIsConnected()
             if self.mapBlipId then
                 -- Fetch MapBlip entity and update its hidden flag

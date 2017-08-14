@@ -27,7 +27,6 @@ function HideableMapBlip:OnCreate()
     MapBlip.OnCreate(self)
     self.hidden = false
     self.alwaysVisibleToOwner = true
-    --self.localClient = nil
     self.playerEntityId = Entity.invalidId
 end
 
